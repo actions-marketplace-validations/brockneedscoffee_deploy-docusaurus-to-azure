@@ -22,10 +22,14 @@ if [ -z "$STORAGE_ACCOUNT_NAME" ]; then
   exit 1
 fi
 
-echo "Logging in..."
-az login --service-principal --username ${{secrets.AZURE_CLIENT_ID}} --password ${{secrets.AZURE_SECRET}} --tenant ${{secrets.AZURE_TENANT_ID}}
+echo "Installing dependencies..."
+npm install
 
-echo "Install yarn"
+echo "Building site"
+npm run build
+
+echo "Logging in..."
+az login --service-principal --username ${AZURE_CLIENT_ID} --password ${AZURE_SECRET} --tenant ${AZURE_TENANT_ID}
 
 echo "Install dependencies"
 
