@@ -1,0 +1,9 @@
+name: "Deploy Docusaurus to Azure"
+description: "Builds and syncs Docusaurus site to Azure"
+author: brockneedscoffee
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: refresh-cw
+  color: green
