@@ -32,5 +32,5 @@ echo "Logging in..."
 az login --service-principal --username ${AZURE_CLIENT_ID} --password ${AZURE_SECRET} --tenant ${AZURE_TENANT_ID}
 
 echo "Uploading to blob storage"
-az storage blob upload-batch --account-name ${STORAGE_ACCOUNT_NAME} --auth-mode key -d '$web' -s ./build
+az storage blob upload-batch --account-name ${STORAGE_ACCOUNT_NAME} --auth-mode key -d '$web' -s ./build --overwrite
 
